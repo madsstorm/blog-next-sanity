@@ -1,8 +1,6 @@
 import { CogIcon } from "@sanity/icons";
 import { defineArrayMember, defineField, defineType } from "sanity";
 
-import * as demo from "@/sanity/lib/demo";
-
 export default defineType({
   name: "settings",
   title: "Settings",
@@ -14,7 +12,7 @@ export default defineType({
       description: "This field is the title of your blog.",
       title: "Title",
       type: "string",
-      initialValue: demo.title,
+      initialValue: "Title",
       validation: (rule) => rule.required(),
     }),
     defineField({
@@ -23,7 +21,7 @@ export default defineType({
         "Used both for the <meta> description tag for SEO, and the blog subheader.",
       title: "Description",
       type: "array",
-      initialValue: demo.description,
+      initialValue: [],
       of: [
         defineArrayMember({
           type: "block",
