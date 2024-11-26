@@ -1,6 +1,5 @@
 import "../globals.css";
 
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { VisualEditing, toPlainText } from "next-sanity";
 import { Inter } from "next/font/google";
@@ -67,7 +66,6 @@ export default async function RootLayout({
           <Footer />
         </section>
         {isDraftMode && <VisualEditing />}
-        <SpeedInsights />
       </body>
     </html>
   );
