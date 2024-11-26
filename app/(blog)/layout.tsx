@@ -2,7 +2,7 @@ import "../globals.css";
 
 import type { Metadata } from "next";
 import { VisualEditing, toPlainText } from "next-sanity";
-import { Inter } from "next/font/google";
+import { Noto_Sans } from "next/font/google";
 import { draftMode } from "next/headers";
 
 import AlertBanner from "./alert-banner";
@@ -44,10 +44,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-const inter = Inter({
-  variable: "--font-inter",
+const notosans = Noto_Sans({
   subsets: ["latin"],
-  display: "swap",
 });
 
 export default async function RootLayout({
@@ -58,7 +56,7 @@ export default async function RootLayout({
   const { isEnabled: isDraftMode } = await draftMode();
 
   return (
-    <html lang="en" className={`${inter.variable} bg-white text-black`}>
+    <html lang="en" className={`${notosans.className} bg-white text-black`}>
       <body>
         <section className="min-h-screen">
           {isDraftMode && <AlertBanner />}
