@@ -1,8 +1,8 @@
 import "../globals.css";
+import { fontInter, fontDmSerifText } from "../fonts";
 
 import type { Metadata } from "next";
 import { VisualEditing, toPlainText } from "next-sanity";
-import { Noto_Sans } from "next/font/google";
 import { draftMode } from "next/headers";
 
 import AlertBanner from "./alert-banner";
@@ -43,11 +43,6 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-const notosans = Noto_Sans({
-  variable: "--font-noto-sans",
-  subsets: ["latin"],
-});
-
 export default async function RootLayout({
   children,
 }: {
@@ -56,7 +51,10 @@ export default async function RootLayout({
   const { isEnabled: isDraftMode } = await draftMode();
 
   return (
-    <html lang="en" className={`${notosans.variable} bg-white text-black`}>
+    <html
+      lang="en"
+      className={`${fontInter.variable} ${fontDmSerifText.variable} bg-white text-black`}
+    >
       <body>
         <section className="min-h-screen">
           {isDraftMode && <AlertBanner />}
