@@ -44,6 +44,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const notosans = Noto_Sans({
+  variable: "--font-noto-sans",
   subsets: ["latin"],
 });
 
@@ -55,7 +56,7 @@ export default async function RootLayout({
   const { isEnabled: isDraftMode } = await draftMode();
 
   return (
-    <html lang="en" className={`${notosans.className} bg-white text-black`}>
+    <html lang="en" className={`${notosans.variable} bg-white text-black`}>
       <body>
         <section className="min-h-screen">
           {isDraftMode && <AlertBanner />}

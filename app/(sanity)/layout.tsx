@@ -1,11 +1,10 @@
 import "../globals.css";
 
-import { Inter } from "next/font/google";
+import { Noto_Sans } from "next/font/google";
 
-const inter = Inter({
-  variable: "--font-inter",
+const notosans = Noto_Sans({
+  variable: "--font-noto-sans",
   subsets: ["latin"],
-  display: "swap",
 });
 
 export { metadata, viewport } from "next-sanity/studio";
@@ -16,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={notosans.variable}>
       <body className="min-h-screen">{children}</body>
     </html>
   );
