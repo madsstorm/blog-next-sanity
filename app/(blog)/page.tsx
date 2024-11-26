@@ -29,9 +29,6 @@ function Intro(props: { title: string | null | undefined; description: any }) {
           value={description?.length ? description : demo.description}
         />
       </h2>
-      <h2 className="text-pretty mt-5 text-center text-lg lg:pl-8 lg:text-left">
-        <Link href="/about">About</Link>
-      </h2>
     </section>
   );
 }
